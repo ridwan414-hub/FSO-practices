@@ -1,2 +1,2 @@
 # first-deploying-with-render
-https://first-deploying-with-render.onrender.com
+https://fso-practices.onrender.com
