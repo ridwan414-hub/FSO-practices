@@ -38,7 +38,9 @@ notesRouter.post('/',async (request, response) => {
     important: body.important === undefined ? false : body.important,
     user : user.id
   })
+  console.log(note)
   const savedNote = await note.save()
+  console.log(savedNote)
   user.notes = user.notes.concat(savedNote._id)
   await user.save()
   response.status(201).json(savedNote)
