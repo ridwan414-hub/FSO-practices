@@ -69,7 +69,7 @@ describe('when there is initially some notes saved', () => {
   })
 
   describe('addition of a new note', () => {
-    test('succeeds with valid data', async () => {
+    test('added successefully if user added it!else will give 400', async () => {
       const newNote = {
         content: 'async/await simplifies making async calls',
         important: true,
@@ -82,9 +82,8 @@ describe('when there is initially some notes saved', () => {
         .expect('Content-Type', /application\/json/)
 
       const notesAtEnd = await helper.notesInDb()
-      expect(notesAtEnd.length).toBe(helper.initialNotes.length + 1)
-
       const contents = notesAtEnd.map(n => n.content)
+      expect(notesAtEnd.length).toBe(helper.initialNotes.length + 1)
       expect(contents).toContain('async/await simplifies making async calls')
     },100000)
 
