@@ -1,26 +1,21 @@
 /* eslint-disable @stylistic/js/linebreak-style */
 /* eslint-disable @stylistic/js/indent */
-const { test , describe } = require('node:test')
-const assert = require('node:assert')
+const reverse = require('../utils/for_testing').reverse
 
-const reverse = require('../utils/for-testing').reverse
+test('reverse of a', () => {
+    const result = reverse('a')
 
-describe('Reverse', () => {
-    test('reverse of a', () => {
-        const result = reverse('a')
+    expect(result).toBe('a')
+})
 
-        assert.strictEqual(result, 'a')
-    })
+test('reverse of react', () => {
+    const result = reverse('react')
 
-    test('reverse of react', () => {
-        const result = reverse('react')
+    expect(result).toBe('tcaer')
+})
 
-        assert.strictEqual(result, 'tcaer')
-    })
+test('reverse of releveler', () => {
+    const result = reverse('releveler')
 
-    test('reverse of saippuakauppias', () => {
-        const result = reverse('saippuakauppias')
-
-        assert.strictEqual(result, 'saippuakauppias')
-    })
+    expect(result).toBe('releveler')
 })
