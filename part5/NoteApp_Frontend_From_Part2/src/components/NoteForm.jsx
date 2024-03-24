@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { useState } from 'react'
 
 const NoteForm = ({ createNote }) => {

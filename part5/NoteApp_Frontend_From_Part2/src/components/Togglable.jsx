@@ -1,18 +1,20 @@
-import { forwardRef, useImperativeHandle, useState } from 'react';
+/* eslint-disable linebreak-style */
+import PropTypes from 'prop-types'
+import { forwardRef, useImperativeHandle, useState } from 'react'
 
 // eslint-disable-next-line react/display-name
 const Togglable = forwardRef((props,refs) => {
-const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(false)
 
-  const hideWhenVisible = { display: visible ? 'none' : '' };
-  const showWhenVisible = { display: visible ? '' : 'none' };
+  const hideWhenVisible = { display: visible ? 'none' : '' }
+  const showWhenVisible = { display: visible ? '' : 'none' }
 
   const toggleVisibility = () => {
-    setVisible(!visible);
-  };
+    setVisible(!visible)
+  }
 
   useImperativeHandle(refs, () => {
-    return{toggleVisibility}
+    return{ toggleVisibility }
   })
 
   return (
@@ -27,5 +29,8 @@ const [visible, setVisible] = useState(false);
     </div>
   )
 })
+Togglable.propTypes = {
+  buttonLabel:PropTypes.string.isRequired
+}
 
-export default Togglable;
+export default Togglable
